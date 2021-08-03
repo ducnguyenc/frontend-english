@@ -1,7 +1,18 @@
 <template>
   <div>
     <div>
+      <b-form @submit="onSubmit">
+        <label for="feedback-user">English</label>
+        <b-form-input v-model="form.english"></b-form-input>
+        <label for="feedback-user">Vietnamese</label>
+        <b-form-input v-model="form.vietnamese"></b-form-input>
+        <b-button type="submit" variant="primary">Submit</b-button>
+      </b-form>
+    </div>
+
+    <div>
       <b-button size="sm" @click="selectAllRows">Select all</b-button>
+      <b-button size="sm" @click="deleteAllRows">Delete all</b-button>
     </div>
     <b-row>
       <b-col>
@@ -199,6 +210,10 @@ export default {
           synth nesciunt you probably haven't heard of them accusamus labore VHS.
         `,
       days: [1, 2, 3, 4, 5],
+      form: {
+        english: "",
+        vietnamese: "",
+      },
     };
   },
   mounted() {
@@ -230,6 +245,36 @@ export default {
         .post(
           "http://english-english.herokuapp.com/api/english/vocabulary/forward",
           this.selected
+        )
+        .then((response) => {
+          console.log("success", response);
+          this.$router.go();
+        })
+        .catch(function (error) {
+          console.log("ERRRR", error);
+        });
+    },
+
+    deleteAllRows() {
+      axios
+        .post(
+          "http://english-english.herokuapp.com/api/english/vocabulary/delete",
+          this.selected
+        )
+        .then((response) => {
+          console.log("success", response);
+          this.$router.go();
+        })
+        .catch(function (error) {
+          console.log("ERRRR", error);
+        });
+    },
+
+    onSubmit() {
+      axios
+        .post(
+          "http://english-english.herokuapp.com/api/english/vocabulary",
+          this.form
         )
         .then((response) => {
           console.log("success", response);
