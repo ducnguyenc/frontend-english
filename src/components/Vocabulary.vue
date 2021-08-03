@@ -207,7 +207,7 @@ export default {
   methods: {
     login: function () {
       axios
-        .get("http://127.0.0.1:8000/api/english/vocabulary")
+        .get("http://english-english.herokuapp.com/api/english/vocabulary")
         .then((response) => {
           this.items.day1 = JSON.parse(response.data[1]);
           this.items.day2 = JSON.parse(response.data[2]);
@@ -228,7 +228,7 @@ export default {
     selectAllRows() {
       axios
         .post(
-          "http://127.0.0.1:8000/api/english/vocabulary/forward",
+          "http://english-english.herokuapp.com/api/english/vocabulary/forward",
           this.selected
         )
         .then((response) => {
