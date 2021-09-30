@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <b-form @submit="onSubmit">
+      <b-form @submit.prevent="onSubmit">
         <label for="feedback-user">English</label>
         <b-form-input v-model="form.english"></b-form-input>
         <label for="feedback-user">Vietnamese</label>
@@ -64,8 +64,8 @@
       <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-table
-            :items="items.day1"
-            :fields="fields"
+            :items="items.eday1"
+            :fields="efields"
             selectable
             @row-selected="onRowSelected"
           >
@@ -79,6 +79,30 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
+                </b-row>
+              </b-card>
+            </template>
+          </b-table>
+          <b-table
+            :items="items.vday1"
+            :fields="vfields"
+            selectable
+            @row-selected="onRowSelected"
+          >
+            <template #cell(english)="row">
+              <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.detailsShowing ? "Hide" : "Show" }} Details
+              </b-button>
+            </template>
+            <template #row-details="row">
+              <b-card>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>English:</b></b-col>
+                  <b-col>{{ row.item.english }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
+                  <b-col>{{ row.item.spell }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -88,8 +112,8 @@
       <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-table
-            :items="items.day2"
-            :fields="fields"
+            :items="items.eday2"
+            :fields="efields"
             selectable
             @row-selected="onRowSelected"
           >
@@ -103,6 +127,30 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
+                </b-row>
+              </b-card>
+            </template>
+          </b-table>
+          <b-table
+            :items="items.vday2"
+            :fields="vfields"
+            selectable
+            @row-selected="onRowSelected"
+          >
+            <template #cell(english)="row">
+              <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.detailsShowing ? "Hide" : "Show" }} Details
+              </b-button>
+            </template>
+            <template #row-details="row">
+              <b-card>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>English:</b></b-col>
+                  <b-col>{{ row.item.english }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
+                  <b-col>{{ row.item.spell }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -112,8 +160,8 @@
       <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-table
-            :items="items.day3"
-            :fields="fields"
+            :items="items.eday3"
+            :fields="efields"
             selectable
             @row-selected="onRowSelected"
           >
@@ -127,6 +175,30 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
+                </b-row>
+              </b-card>
+            </template>
+          </b-table>
+          <b-table
+            :items="items.vday3"
+            :fields="vfields"
+            selectable
+            @row-selected="onRowSelected"
+          >
+            <template #cell(english)="row">
+              <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.detailsShowing ? "Hide" : "Show" }} Details
+              </b-button>
+            </template>
+            <template #row-details="row">
+              <b-card>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>English:</b></b-col>
+                  <b-col>{{ row.item.english }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
+                  <b-col>{{ row.item.spell }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -136,8 +208,8 @@
       <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-table
-            :items="items.day4"
-            :fields="fields"
+            :items="items.eday4"
+            :fields="efields"
             selectable
             @row-selected="onRowSelected"
           >
@@ -155,13 +227,37 @@
               </b-card>
             </template>
           </b-table>
+          <b-table
+            :items="items.vday4"
+            :fields="vfields"
+            selectable
+            @row-selected="onRowSelected"
+          >
+            <template #cell(english)="row">
+              <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.detailsShowing ? "Hide" : "Show" }} Details
+              </b-button>
+            </template>
+            <template #row-details="row">
+              <b-card>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>English:</b></b-col>
+                  <b-col>{{ row.item.english }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
+                  <b-col>{{ row.item.spell }}</b-col>
+                </b-row>
+              </b-card>
+            </template>
+          </b-table>
         </b-card-body>
       </b-collapse>
       <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
         <b-card-body>
           <b-table
-            :items="items.day5"
-            :fields="fields"
+            :items="items.eday5"
+            :fields="efields"
             selectable
             @row-selected="onRowSelected"
           >
@@ -175,6 +271,30 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
+                </b-row>
+              </b-card>
+            </template>
+          </b-table>
+          <b-table
+            :items="items.vday5"
+            :fields="vfields"
+            selectable
+            @row-selected="onRowSelected"
+          >
+            <template #cell(english)="row">
+              <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.detailsShowing ? "Hide" : "Show" }} Details
+              </b-button>
+            </template>
+            <template #row-details="row">
+              <b-card>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>English:</b></b-col>
+                  <b-col>{{ row.item.english }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
+                  <b-col>{{ row.item.spell }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -187,16 +307,26 @@
 
 <script>
 const axios = require("axios/index");
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = "http://english-english.herokuapp.com";
+// axios.defaults.baseURL = "http://localhost:8000";
+
 export default {
   data() {
     return {
-      fields: ["english", "spell", "vietnamese"],
+      efields: ["english", "spell", "vietnamese"],
+      vfields: ["english", "vietnamese"],
       items: {
-        day1: [],
-        day2: [],
-        day3: [],
-        day4: [],
-        day5: [],
+        eday1: [],
+        vday1: [],
+        eday2: [],
+        vday2: [],
+        eday3: [],
+        vday3: [],
+        eday4: [],
+        vday4: [],
+        eday5: [],
+        vday5: [],
       },
       selected: [],
       text: `
@@ -221,18 +351,26 @@ export default {
   },
   methods: {
     login: function () {
-      axios
-        .get("http://english-english.herokuapp.com/api/english/vocabulary")
-        .then((response) => {
-          this.items.day1 = JSON.parse(response.data[1]);
-          this.items.day2 = JSON.parse(response.data[2]);
-          this.items.day3 = JSON.parse(response.data[3]);
-          this.items.day4 = JSON.parse(response.data[4]);
-          this.items.day5 = JSON.parse(response.data[5]);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios
+          .get("/api/english/vocabulary")
+          .then((response) => {
+            this.items.eday1 = JSON.parse(response.data[1][0]);
+            this.items.vday1 = JSON.parse(response.data[1][1]);
+            this.items.eday2 = JSON.parse(response.data[2][0]);
+            this.items.vday2 = JSON.parse(response.data[2][1]);
+            this.items.eday3 = JSON.parse(response.data[3][0]);
+            this.items.vday3 = JSON.parse(response.data[3][1]);
+            this.items.eday4 = JSON.parse(response.data[4][0]);
+            this.items.vday4 = JSON.parse(response.data[4][1]);
+            this.items.eday5 = JSON.parse(response.data[5][0]);
+            this.items.vday5 = JSON.parse(response.data[5][1]);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        console.log(response);
+      });
     },
 
     onRowSelected(items) {
@@ -242,10 +380,7 @@ export default {
 
     selectAllRows() {
       axios
-        .post(
-          "http://english-english.herokuapp.com/api/english/vocabulary/forward",
-          this.selected
-        )
+        .post("/api/english/vocabulary/forward", this.selected)
         .then((response) => {
           console.log("success", response);
           this.$router.go();
@@ -256,33 +391,33 @@ export default {
     },
 
     deleteAllRows() {
-      axios
-        .post(
-          "http://english-english.herokuapp.com/api/english/vocabulary/delete",
-          this.selected
-        )
-        .then((response) => {
-          console.log("success", response);
-          this.$router.go();
-        })
-        .catch(function (error) {
-          console.log("ERRRR", error);
-        });
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios
+          .post("/api/english/vocabulary/delete", this.selected)
+          .then((response) => {
+            console.log("success", response);
+            this.$router.go();
+          })
+          .catch(function (error) {
+            console.log("ERRRR", error);
+          });
+        console.log("success", response);
+      });
     },
 
     onSubmit() {
-      axios
-        .post(
-          "http://english-english.herokuapp.com/api/english/vocabulary",
-          this.form
-        )
-        .then((response) => {
-          console.log("success", response);
-          this.$router.go();
-        })
-        .catch(function (error) {
-          console.log("ERRRR", error);
-        });
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios
+          .post("/api/english/vocabulary", this.form)
+          .then((response) => {
+            console.log(response);
+            this.$router.go();
+          })
+          .catch(function (error) {
+            console.log("ERRRR", error);
+          });
+        console.log(response);
+      });
     },
   },
 };
