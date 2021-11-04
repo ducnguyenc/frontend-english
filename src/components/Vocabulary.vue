@@ -71,6 +71,7 @@
           >
             <template #cell(vietnamese)="row">
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                {{ row.index + 1 }}
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
             </template>
@@ -90,6 +91,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
+                {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -138,6 +140,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
+                {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -186,6 +189,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
+                {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -234,6 +238,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
+                {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -282,6 +287,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
+                {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
