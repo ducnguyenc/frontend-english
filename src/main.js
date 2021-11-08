@@ -16,9 +16,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Vocabulary from './components/Vocabulary.vue'
+import SinusIndex from './components/sinus/Index.vue'
+import SinusCreate from './components/sinus/Create.vue'
 
 const routes = [
   { path: '/vocabulary', component: Vocabulary },
+  { path: '/sinus', component: SinusIndex },
+  { path: '/sinus/create', component: SinusCreate },
 ]
 
 const router = new VueRouter({
