@@ -6,6 +6,8 @@
         <b-form-input v-model="form.english"></b-form-input>
         <label for="feedback-user">Vietnamese</label>
         <b-form-input v-model="form.vietnamese"></b-form-input>
+        <label for="feedback-user">Example</label>
+        <b-form-input v-model="form.example"></b-form-input>
         <b-button type="submit" variant="primary">Submit</b-button>
       </b-form>
     </div>
@@ -81,6 +83,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -91,7 +97,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
-                {{ row.index + 1 }}
+              {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -105,6 +111,10 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
                   <b-col>{{ row.item.spell }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -130,6 +140,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -140,7 +154,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
-                {{ row.index + 1 }}
+              {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -154,6 +168,10 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
                   <b-col>{{ row.item.spell }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -179,6 +197,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -189,7 +211,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
-                {{ row.index + 1 }}
+              {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -203,6 +225,10 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
                   <b-col>{{ row.item.spell }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -228,6 +254,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -238,7 +268,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
-                {{ row.index + 1 }}
+              {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -252,6 +282,10 @@
                 <b-row class="mb-2">
                   <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
                   <b-col>{{ row.item.spell }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
                 </b-row>
               </b-card>
             </template>
@@ -277,6 +311,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Vietnamese:</b></b-col>
                   <b-col>{{ row.item.vietnamese }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -287,7 +325,7 @@
             @row-selected="onRowSelected"
           >
             <template #cell(english)="row">
-                {{ row.index + 1 }}
+              {{ row.index + 1 }}
               <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                 {{ row.detailsShowing ? "Hide" : "Show" }} Details
               </b-button>
@@ -302,6 +340,10 @@
                   <b-col sm="3" class="text-sm-right"><b>Spell:</b></b-col>
                   <b-col>{{ row.item.spell }}</b-col>
                 </b-row>
+                <b-row class="mb-2">
+                  <b-col sm="3" class="text-sm-right"><b>Example:</b></b-col>
+                  <b-col>{{ row.item.example }}</b-col>
+                </b-row>
               </b-card>
             </template>
           </b-table>
@@ -314,8 +356,8 @@
 <script>
 const axios = require("axios/index");
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://english-english.herokuapp.com";
-// axios.defaults.baseURL = "http://localhost:8000";
+// axios.defaults.baseURL = "http://english-english.herokuapp.com";
+axios.defaults.baseURL = "http://localhost:8000";
 
 export default {
   data() {
@@ -349,6 +391,7 @@ export default {
       form: {
         english: "",
         vietnamese: "",
+        example: "",
       },
     };
   },
@@ -361,6 +404,7 @@ export default {
         axios
           .get("/api/english/vocabulary")
           .then((response) => {
+            console.log(response);
             this.items.eday1 = JSON.parse(response.data[1][0]);
             this.items.vday1 = JSON.parse(response.data[1][1]);
             this.items.eday2 = JSON.parse(response.data[2][0]);
@@ -412,6 +456,7 @@ export default {
     },
 
     onSubmit() {
+      console.log(this.form);
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios
           .post("/api/english/vocabulary", this.form)
