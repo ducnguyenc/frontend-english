@@ -18,11 +18,17 @@ Vue.use(VueRouter)
 import Vocabulary from './components/vocabulary/Vocabulary.vue'
 import SinusIndex from './components/sinus/Index.vue'
 import SinusCreate from './components/sinus/Create.vue'
+import FlirtIndex from './components/flirt/Index.vue'
+import FlirtTypeIndex from './components/flirt/type/Index.vue'
+import FlirtCategoryIndex from './components/flirt/category/Index.vue'
 
 const routes = [
   { path: '/vocabulary', component: Vocabulary },
   { path: '/sinus', component: SinusIndex },
   { path: '/sinus/create', component: SinusCreate },
+  { path: '/flirt', component: FlirtIndex },
+  { path: '/flirt/type', component: FlirtTypeIndex },
+  { path: '/flirt/category', component: FlirtCategoryIndex },
 ]
 
 const router = new VueRouter({
