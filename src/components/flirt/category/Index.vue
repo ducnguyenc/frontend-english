@@ -45,8 +45,8 @@
 <script>
 const axios = require("axios/index");
 axios.defaults.withCredentials = true;
-// axios.defaults.baseURL = "http://english-english.herokuapp.com";
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "http://english-english.herokuapp.com";
+// axios.defaults.baseURL = "http://localhost:8000";
 
 export default {
   data() {
